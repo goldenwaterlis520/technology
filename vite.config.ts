@@ -5,7 +5,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: '/technology/',   // ← 加在这里！
+    base: '/technology/',   // GitHub Pages 子路径
+
+    build: {
+      outDir: 'docs',       // ← 新增：build 输出到 docs 资料夹
+    },
 
     server: {
       port: 3000,
